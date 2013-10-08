@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		"Invalid email format");
 		
 	require_once('recaptchalib.php');
-	$privatekey = "6LdShOgSAAAAAIZuxgbu5Pkcvduxdh5BWBTxq6Tl";
+	$privatekey = "<private_key>";
 	$resp = recaptcha_check_answer ($privatekey,
                                 	$_SERVER["REMOTE_ADDR"],
 									$_POST["recaptcha_challenge_field"],
@@ -236,7 +236,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		<td colspan=3 align="center">
 			<?php
 				require_once('recaptchalib.php');
-				$publickey = "6LdShOgSAAAAAOuY5ojER_XxRW1dYNW7gyHt-Kmj";
+				$publickey = "<public_key>";
 				echo recaptcha_get_html($publickey);
 	        ?><br/>
 	        <span class="error"><?php echo $recaptcha_error;?></span>
